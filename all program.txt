@@ -3,8 +3,6 @@ Processing." Visit our website at:  www.dspguide.com.  All these programs may
 be copied, distributed, and used for any noncommercial purpose.
 
 
-
-
 TABLE 2-3
 100 'CALCULATION OF THE HISTOGRAM, MEAN, AND STANDARD DEVIATION
 110 '
