@@ -3,6 +3,32 @@ Processing." Visit our website at:  www.dspguide.com.  All these programs may
 be copied, distributed, and used for any noncommercial purpose.
 
 
+TABLE 2-1
+100 CALCULATION OF THE MEAN AND STANDARD DEVIATION
+110 '
+120 DIM X[511]           'The signal is held in X[0] to X[511]
+130 N% = 512             'N% is the number of points in the signal
+140 '
+150 GOSUB XXXX           'Mythical subroutine that loads the signal into X[ ]
+160 '
+170 MEAN = 0             'Find the mean via Eq. 2-1
+180 FOR I% = 0 TO N%-1
+190   MEAN = MEAN + X[I%]
+200 NEXT I%
+210 MEAN = MEAN/N%
+220 '
+230 VARIANCE = 0         'Find the standard deviation via Eq. 2-2
+240 FOR I% = 0 TO N%-1
+250   VARIANCE = VARIANCE + ( X[I%] - MEAN )^2
+260 NEXT I%
+270 VARIANCE = VARIANCE/(N%-1)
+280 SD = SQR(VARIANCE)
+290 '
+300 PRINT  MEAN  SD      'Print the calculated mean and standard deviation
+310 '
+320 END
+
+
 TABLE 2-2
 100 'MEAN AND STANDARD DEVIATION USING RUNNING STATISTICS
 110 '

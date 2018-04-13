@@ -1,6 +1,4 @@
 TABLE 2-1
-100 CALCULATION OF THE MEAN AND STANDARD DEVIATION
-
 calculation of the mean and standard deviation
 
 #include "reg51.h"
@@ -23,4 +21,29 @@ main()
       veriance = veriance / (n - 1);
       sd       = sqrt(veriance);//sqrt（）计算平方根函数
    }
+}
+
+
+TABLE 2-2
+mean and standard deviation using running statistics
+
+#include "reg51.h"
+#include "math.h"
+main()
+{
+	int k, n = 0, sum = 0;
+	double mean, veriance, sd;
+	char x[511];
+	while (1)
+	{
+		for (k = 0; k < 512; k++)
+		{
+			n          = n + 1;
+			sum        = sum + x[k];
+			sumsquares = sumsquares + pow(x[k], 2)
+			mean       = sum / n;
+			variance   = (sumsquares - pow(sum, 2) / n) / (n - 1);
+			sd         = sqrt(veriance);//sqrt（）计算平方根函数
+		}
+	}
 }

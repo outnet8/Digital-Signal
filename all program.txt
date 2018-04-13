@@ -3,32 +3,6 @@ Processing." Visit our website at:  www.dspguide.com.  All these programs may
 be copied, distributed, and used for any noncommercial purpose.
 
 
-TABLE 2-2
-100 'MEAN AND STANDARD DEVIATION USING RUNNING STATISTICS
-110 '
-120 DIM X[511]           'The signal is held in X[0] to X[511]
-130 '
-140 GOSUB XXXX           'Mythical subroutine that loads the signal into X[ ]
-150 '
-160 N% = 0               'Zero the three running parameters
-170 SUM = 0
-180 SUMSQUARES = 0
-190 '
-200 FOR I% = 0 TO 511    'Loop through each sample in the signal
-210   '
-220   N% = N%+1          'Update the three parameters
-230   SUM = SUM + X(I%)
-240   SUMSQUARES = SUMSQUARES + X(I%)^2
-250   '
-260   MEAN = SUM/N% 'Calculate mean and standard deviation via Eq. 2-3
-270   VARIANCE = (SUMSQUARES -  SUM^2/N%) / (N%-1)
-280   SD = SQR(VARIANCE)
-290   '
-300   PRINT  MEAN   SD   'Print the running mean and standard deviation
-310   '
-320 NEXT I%
-330 '
-340 END
 
 
 TABLE 2-3
