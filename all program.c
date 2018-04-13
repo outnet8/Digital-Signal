@@ -23,7 +23,6 @@ main()
    }
 }
 
-
 TABLE 2-2
 mean and standard deviation using running statistics
 
