@@ -6,40 +6,39 @@ SEND THEM TO THE AUTHOR AT:  SMITH@DSPGUIDE.COM
 
 
 
-
 CHAPTER 2: STATISTICS, PROBABILITY AND NOISE
 
 Use the following algorithm to find the value of each sample in a test
 signal, where the function "rnd" returns a random number between 0 and 1:
 
-x = rnd 
-if x < 0.6 then x = x-0.2 
+x = rnd
+if x < 0.6 then x = x-0.2
 
 1. Calculation of the histogram.
 
-a. Sketch the pdf of the process that generated this signal. 
-b. Generate and plot a signal containing 300 points from this algorithm. 
-c. Generate and plot the histogram of 1000 points acquired from this 
-algorithm.  Use a bin width of 0.01. 
+a. Sketch the pdf of the process that generated this signal.
+b. Generate and plot a signal containing 300 points from this algorithm.
+c. Generate and plot the histogram of 1000 points acquired from this
+algorithm.  Use a bin width of 0.01.
 d. Repeat (b) using 10,000 samples.
-e. Repeat (b) using 100,000 samples. 
-f. Estimate the peak-to-peak noise on the histograms in (c) to (e). Give 
+e. Repeat (b) using 100,000 samples.
+f. Estimate the peak-to-peak noise on the histograms in (c) to (e). Give
 your answer as the actual number, not a percentage.
-g. Which of these three histograms is the best estimate of the pdf?  The 
+g. Which of these three histograms is the best estimate of the pdf?  The
 worst estimate?
 h. Which histogram has the lowest peak-to-peak noise?  The highest peak-to-
-peak noise?  
-i. Explain the apparent contradiction between your answers in (g) and (h).   
+peak noise?
+i. Explain the apparent contradiction between your answers in (g) and (h).
 
- 
+
 2. Calculation of the mean and standard deviation.
 
 a. Generate a signal containing 10,000 points from this algorithm. Calculate
-the mean and standard deviation, using a method of your choice.       
-b. Generate three signals as in (a), and add them together.  Calculate the 
+the mean and standard deviation, using a method of your choice.
+b. Generate three signals as in (a), and add them together.  Calculate the
 mean and standard deviation of the resulting signal.
-c. Repeat (b) adding 10 signals. 
-d. Repeat (b) adding 30 signals.  
+c. Repeat (b) adding 10 signals.
+d. Repeat (b) adding 30 signals.
 e. Make a graph of your data in (a)-(d), proving that when random signals
 are added, their means add and their standard deviations add in quadrature.
 In your graphs, the x-axis should be "number of points," and the y-axis
@@ -47,35 +46,35 @@ should be "mean" or "standard deviation."
 
 
 3. The Central Limit Theorem.
-  
-a. Calculate and plot the histogram of the signal in 2(c).   
-b. On this same graph, show a Gaussian curve with the mean and standard 
-deviation determined in 2(c).  
-c. Comment on the match between the two in terms of accuracy and precision.  
-d. Would increasing the number of samples improve the accuracy or precision 
-of the match?  
-e. Would increasing the number of signals added improve the accuracy of the 
-match? 
+
+a. Calculate and plot the histogram of the signal in 2(c).
+b. On this same graph, show a Gaussian curve with the mean and standard
+deviation determined in 2(c).
+c. Comment on the match between the two in terms of accuracy and precision.
+d. Would increasing the number of samples improve the accuracy or precision
+of the match?
+e. Would increasing the number of signals added improve the accuracy of the
+match?
 
 
- 
+
 CHAPTER 3: ADC AND DAC
 
 1. Generate a 1000 point digital signal that simulates an analog signal,
 consisting of a sine wave at 30.76 hertz, being sampled at 1 kHz for 1
 second.  Plot this digital signal with the x-axis labeled "time", running
-from 0 to 1 second.  
+from 0 to 1 second.
 
 
 2. Simulate sampling the analog signal at 200 Hz, by discarding every 4 out
-of  5 samples from the digital signal you created in step 1.  
-          
-a. Plot this resampled signal, with the x-axis labeled as "time", running 
-from 0 to 1 second.  
-b. Has aliasing occurred in this signal? Explain.  
-c. What is the digital frequency of this signal?  
-d. Could the original analog signal be reconstructed from this digital 
-signal?  
+of  5 samples from the digital signal you created in step 1.
+
+a. Plot this resampled signal, with the x-axis labeled as "time", running
+from 0 to 1 second.
+b. Has aliasing occurred in this signal? Explain.
+c. What is the digital frequency of this signal?
+d. Could the original analog signal be reconstructed from this digital
+signal?
 
 
 3. Repeat #2 with the sampling at 50 Hz, 33.33 Hz, and 28.57 Hz.
@@ -88,7 +87,7 @@ This exercise looks at the problem of adding numbers that are very different
 is size.   Write a computer program(s) to complete the following.
 
 1. Generate a 256 samples long sine wave with an amplitude of one, and a
-frequency such that it completes 3 full periods in the 256 samples. 
+frequency such that it completes 3 full periods in the 256 samples.
 Represent each of the samples using single precision floating point.  We
 will call this signal, x[ ]
 
@@ -114,7 +113,7 @@ quantization noise on the [fill in the blank] number destroys the
 information contained in the [fill in the blank] number. "
 
 b. The results of step 7 show that the information in the reconstructed
-signal is completely destroyed with k is equal to 30 million, or greater. 
+signal is completely destroyed with k is equal to 30 million, or greater.
 If this exercise were repeated with the sine wave of amplitude 0.001, how
 large of value of k would be needed to destroy the information in the
 reconstructed signal?
@@ -130,41 +129,41 @@ CHAPTER 5: LINEAR SYSTEMS
 These computer exercises will help you understand "The Fundamental Concept
 in DSP", as illustrated in Fig. 5-11.
 
-1. Generate and plot the following four signals, each 500 samples long: 
+1. Generate and plot the following four signals, each 500 samples long:
 
 a. x1[n] =  sin(2*pi*n/100)
-b. x2[n] =  4*exp(-(n-150)^2/300) - exp(-(n-150)^2/2500)         
+b. x2[n] =  4*exp(-(n-150)^2/300) - exp(-(n-150)^2/2500)
 c. x3[n] =  1 for 240 < n < 300
            -2 for 299 < n < 380
-            0  otherwise 
+            0  otherwise
 d. x4[n] =  rnd+rnd+rnd+rnd+rnd+rnd-3
-            (where the function rnd returns a random number uniformly        
-             distributed between 0 and 1)         
+            (where the function rnd returns a random number uniformly
+             distributed between 0 and 1)
 
 2. Generate and plot the sum of these four signals:
-        
+
 x[n] = x1[n] + x2[n] + x3[n] + x4[n]
-        
-        
+
+
 3. Pass each of the five signals through the linear system defined below,
 creating the signals: y[n], y1[n], y2[n], y3[n] and y4[n].  Using x[n] and
-y[n] as an example, the system is defined by the difference equation:        
- 
-      
+y[n] as an example, the system is defined by the difference equation:
+
+
 y[n] = 0.05 x[n] + 0.95 y[n-1]
-        
-This can be carried out with the following program: 
+
+This can be carried out with the following program:
 
 y[0] = 0
 for n = 1 to 499
  y[n] = 0.05*x[n] + 0.95*y[n-1]
 next n
-        
+
 As will be discussed in Chapter 19, this is called a "single-pole recursive
 low-pass filter."  It operates in the same way as an RC circuit in
-electronics, smoothing the waveform and removing high-frequency noise.       
- 
-      
+electronics, smoothing the waveform and removing high-frequency noise.
+
+
 4. Compare y[n] with the sum of y1[n], y2[n], y3[n], and y4[n]. Are they
 identical?  Test this by subtracting one from the other.  Plot the result
 and explain any difference between the two signals.
@@ -174,23 +173,23 @@ and explain any difference between the two signals.
 CHAPTER 6: CONVOLUTION
 
 1. Write a program that calculates y[n] = x[n]*h[n], where y[n] is 598
-samples, x[n] is 500 samples, and h[n] is 99 samples.  
+samples, x[n] is 500 samples, and h[n] is 99 samples.
 
-                                          
+
 2. Generate an impulse response, h[n], according to the algorithm below. As
 discussed in Chapter 16, this is the filter kernel for a "low-pass
-windowed-sinc" filter.  When convolved with an input signal, this filter 
+windowed-sinc" filter.  When convolved with an input signal, this filter
 passes sinusoids that have fewer than 25 cycles in 500 samples, and blocks
 sinusoids with a higher frequency. Make a plot of this signal.
 
 for i = 0 to 98
- h[i] = 0.31752 * sin(0.314159 * (i-49.00001)) / (i-49.00001)    
+ h[i] = 0.31752 * sin(0.314159 * (i-49.00001)) / (i-49.00001)
  h[i] = h[i] * (0.54 - 0.46 * cos(0.0641114 * i))
 next i
 
- 
-3. Test your program by convolving h[n] with the signal described below. 
-What should the output of your program be in response to this signal? Why?   
+
+3. Test your program by convolving h[n] with the signal described below.
+What should the output of your program be in response to this signal? Why?
 
 x[n] = 1 for n = 0
 x[n] = 0 otherwise
@@ -199,20 +198,20 @@ x[n] = 0 otherwise
 4. Generate a more complicated test signal, x[n], that consists of two
 sinusoids added together.  The first sinusoid will have an amplitude of 1,
 and make 6 complete cycles in the 500 samples.  The second sinusoid will
-have an amplitude of 0.5 and make 44 complete cycles in the 500 samples. 
-Make of plot of this signal.  
+have an amplitude of 0.5 and make 44 complete cycles in the 500 samples.
+Make of plot of this signal.
 
-                      
+
 5. Test your convolution program by filtering the signal you created in 4,
 with the filter kernel you created in 2. Plot this signal. Has the filter
 passed the lower frequency signal, while blocking the higher frequency
-signal?  Comment on its effectiveness.  
+signal?  Comment on its effectiveness.
 
 
 6. Turn the filter kernel into a high-pass filter by changing the sign of
 all the samples, and then adding one to sample 49  (you can look ahead to
 Fig. 14-5 if you want more information on this procedure). Test this
-high-pass filter in the same way as step 4.  
+high-pass filter in the same way as step 4.
 
 
 
@@ -222,7 +221,7 @@ The exercise looks at two different ways of detect a known waveform in a
 noisy signal.  The waveform to be detected is an exponentially decaying
 pulse. The first detection method is to threshold the first difference of
 the signal.  The second method is to threshold the correlation of the signal
-with the known waveform. 
+with the known waveform.
 
 1.  Generate a 600 sample test signal, containing three target pulses:
 
@@ -270,7 +269,7 @@ x[n] = (sin(2 pi n 0.08) + 2 sin(2 pi n 0.3)) exp(-(n-200)^2 / 60^2)
 This signal is composed of two sinusoids, with frequencies of 0.08 and 0.3,
 multiplied by a Gaussian, with a standard deviation of 60.  Each sinusoid
 produces a peak in the frequency domain, while the Gaussian makes these
-peaks wider and more uniform (more about this in Chapter 9).  
+peaks wider and more uniform (more about this in Chapter 9).
 
 
 2. Take the DFT of this signal.  Plot the real and imaginary parts.  These
@@ -285,7 +284,7 @@ understand? Explain.
 
 
 4. Plot the magnitude on a log amplitude scale. Do the samples between the
-two peaks have a value of zero?  Explain. 
+two peaks have a value of zero?  Explain.
 
 
 5. Plot the phase signal. Identify those sections of the phase that are
@@ -299,13 +298,13 @@ unwrapping make the phase easier to understand? Explain.
 7. Convert the polar frequency spectrum back into rectangular notation, and
 then take the Inverse DFT.  Compare the resulting time domain signal with
 the original?  Are they identical?  Plot the difference between the two
-signals, and explain why it is not entirely zero. 
+signals, and explain why it is not entirely zero.
 
 
 
 CHAPTER 9: APPLICATIONS OF THE DFT
 
-1. Create a 600 sample test signal: x[n] = cos(2 pi n 8 / 600) exp(n/200). 
+1. Create a 600 sample test signal: x[n] = cos(2 pi n 8 / 600) exp(n/200).
 Add random noise to this signal, with mean = 0 and SD = 1. Plot this signal.
 
 
@@ -318,7 +317,7 @@ convolution improved the signal?
 
 
 4. Pad x[n] with zeros to form a 1024 sample signal, calculate the spectrum,
-and plot the magnitude. 
+and plot the magnitude.
 
 
 5. In the spectrum of x[n], identify the portion that is mostly signal, and
@@ -337,7 +336,7 @@ those that are mostly blocked (< 10% amplitude).
 7. Multiply the frequency spectrum by the frequency response (see Eq. 9-1),
 and take the inverse DFT. Is this signal identical to that obtained by
 direct convolution?  Test this by subtracting the two signals, and plotting
-the result.  Explain the result. 
+the result.  Explain the result.
 
 
 
@@ -351,35 +350,35 @@ x[n] = exp(-(n-200)^2/900)
 
 
 2. Calculate the DFT, convert to polar form, and plot the magnitude and
-phase. 
+phase.
 
 
 3. Modify the frequency spectrum such that the time domain signal will be
-shifted by 270 samples to the right.  
+shifted by 270 samples to the right.
 
 
 4. Take the Inverse DFT of the modified spectrum. Plot the resulting time
 domain signal. Has the signal shifted as expected? Has aliasing occurred?
-Explain. 
+Explain.
 
 
 Modulation and frequency domain aliasing.
 
 For each of the following steps, plot the time domain signal, calculate the
-DFT, and plot the magnitude. 
+DFT, and plot the magnitude.
 
 5. Generate and plot the following 512 sample signal, calculate the DFT, and
-plot the magnitude. 
+plot the magnitude.
 
 
 x[n] = exp(-(n-200)^2/900)  sin(2 pi n 0.027) + 0.08
 
 
 6. Generate and plot the following 512 sample signal, calculate the DFT, and
-plot the magnitude. 
+plot the magnitude.
 
 
-x[n] =  sin(2 pi n 0.3125) 
+x[n] =  sin(2 pi n 0.3125)
 
 
 7. Multiply the time domain signals created in steps 5 and 6, plot,
@@ -414,15 +413,15 @@ incorrect, it does not have a cutoff frequency of 0.01.  Identify which of
 the four is incorrect, and modify it so that it does have a cutoff frequency
 of 0.01.  Explain your modification.
 
- 
+
 4. Plot each of the four time domain waveforms (the correct versions), each
 of the four magnitudes, and each of the four magnitudes on a logarithmic
-amplitude scale. 
+amplitude scale.
 
 
 5. Suppose that these four waveforms were being used as filter kernels.  The
 goal is to pass a signal at frequency 0.005, while blocking noise in the
-frequency band of 0.03 to 0.4.  Answer the following.  
+frequency band of 0.03 to 0.4.  Answer the following.
 
 a.  Why must the four time domain waveforms be normalized to have the same
 area in this comparison?  What would be the affect on the magnitudes if they
@@ -432,13 +431,13 @@ the signal is passed? Explain.
 c. Are any of these four filters better or worse than the others in how well
 the noise is blocked? Explain.
 d. Which of these four filters is the best for this application?
-e.  Which of these four filters is the worst for this application? 
+e.  Which of these four filters is the worst for this application?
 
 
 
 CHAPTER 12: THE FAST FOURIER TRANSFORM
 
-1. Write (or copy) an FFT and an IFFT subroutine. 
+1. Write (or copy) an FFT and an IFFT subroutine.
 
 2. Test that the subroutines are operating correctly:
 
@@ -446,21 +445,21 @@ a. Generate two random signals, each containing 256 samples, and place them
 in the real and imaginary parts of the time domain.  Take the FFT and then
 the IFFT.  Calculate the difference between the original signals, and the
 reconstructed signals.  Is the difference zero?  Explain.  Make a plot of
-the difference for the real part. 
+the difference for the real part.
 
 b. Place a random signal into the real part of the time domain, and zeros
 into the imaginary part. Take the FFT and convert to polar form.  Plot the
 real & imaginary parts.  (To make the frequency spectra easier to graph, you
 will probably want to use random numbers that have a mean of zero).   Does
-the frequency domain have the proper symmetry? Explain 
+the frequency domain have the proper symmetry? Explain
 
 
 3. Use the FFT in a spectral analysis problem:
 
 a. Generate a 1,024,000 sample signal containing normally distributed random
 noise with zero mean and a standard deviation of one, plus a sine wave with
-amplitude 0.1, and a frequency of 0.2. 
-b. Plot 1024 samples from this signal.  Is the sine wave visible?  
+amplitude 0.1, and a frequency of 0.2.
+b. Plot 1024 samples from this signal.  Is the sine wave visible?
 c. Take the FFT of these 1024 samples and plot the magnitude.  Is the sine
 wave visible?
 d. Use the method of Chapter 9 to calculate the average frequency spectrum
