@@ -31,9 +31,9 @@ mean and standard deviation using running statistics
 #include "math.h"
 main()
 {
-	int k, n = 0, sum = 0;
-	double mean, veriance, sd;
-	char x[511];
+    int    k, n = 0, sum = 0;
+    double sumsquares, mean, veriance, sd;
+    char   x[511];
 	while (1)
 	{
 		for (k = 0; k < 512; k++)
